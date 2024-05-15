@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+body {
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgb(149, 189, 202) 0px,
+      rgb(149, 189, 202) 1px,
+      transparent 1px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgb(149, 189, 202) 0px,
+      rgb(149, 189, 202) 2px,
+      transparent 2px,
+      transparent 120px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(149, 189, 202) 0px,
+      rgb(149, 189, 202) 1px,
+      transparent 1px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(149, 189, 202) 0px,
+      rgb(149, 189, 202) 2px,
+      transparent 2px,
+      transparent 120px
+    ),
+    linear-gradient(white, white);
+}
+h1,
+p {
+  font-family: "Libre Baskerville", serif !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  letter-spacing: 5px;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.calculator {
+  width: 450px;
+  height: 525px;
+  border: 3px solid rgb(29, 37, 50);
+  background-color: rgb(55, 64, 82);
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.content {
+  height: 60vh;
+}
+.display {
+  background-color: rgb(212, 218, 214);
+  border: 2px solid rgb(29, 37, 50);
+  height: 60px;
+  font-size: 30px;
+  padding: 15px;
+}
+
+#point,
+#multi,
+#divide,
+#add,
+#subtract,
+#arrow,
+#mod{
+  font-weight: bolder;
+  font-size: large;
+  color: rgb(222, 99, 116) !important;
+}
+.btn {
+  color: white !important;
+}
+
+.btn:active{
+  background-color: hsla(229, 36%, 60%, 0.534) !important;
+}
+
+#equal:active{
+  background-color: hsla(229, 81%, 45%, 0.534) !important;
+}
+
+
+#equal{
+  letter-spacing: 5px;
+  border-radius: 25px;
+}
