@@ -31,7 +31,7 @@ const Calculator = element("div", "calculator m-auto px-3 py-4", "", "");
 const Display = element("input", "display w-100", "result", "");
 const NumRow = element("div", "row g-2 p-2", "rows", "");
 const C = element("button", "btn col-3 text-danger ", "clear", "C");
-const Arrow = element("button", "btn col-3 p-3", "arrow", "&larr;");
+const Backspace = element("button", "btn col-3 p-3", "backspace", "&larr;");
 const Point = element("button", "btn col-3 p-3", "point", ".");
 const Multi = element("button", "btn col-3 p-3", "multi", "X");
 const Seven = element("button", "btn col-3 p-3", "7", "7");
@@ -49,7 +49,7 @@ const Add = element("button", "btn col-3 p-3", "add", "+");
 const Zero = element("button", "btn col-3 p-3", "zero", "0");
 const DoubleZero = element("button", "btn col-3 p-3", "double", "00");
 const TripleZero = element("button", "btn col-3 p-3", "triple", "000");
-const mod = element("button", "btn col-3 p-3", "mod", "| % |");
+const Mod = element("button", "btn col-3 p-3", "mod", "| % |");
 const Equal = element(
   "button",
   "btn btn-info fs-3 fw-bold text-danger-emphasis mt-2 p-2 d-flex justify-content-center align-items-center ",
@@ -59,6 +59,7 @@ const Equal = element(
 
 //*          <----------------------------------Set Attributes and content---------------------------------->
 
+
 Display.type = "text";
 Display.placeholder = "0";
 Display.setAttribute("readonly", "");
@@ -66,7 +67,7 @@ Heading.innerHTML = "Calculator";
 Description.innerHTML =
   "This Calculator Task was Created with Javascript DOM Manipulation";
 
-//! <-------------------------------------------Functions-------------------------------------------------------->
+  //! <-------------------------------------------Functions-------------------------------------------------------->
 
 //*          <----------------------------------Used Keyboard Events---------------------------------->
 
@@ -86,8 +87,9 @@ const keyMap = {
   // "-": Sub,
   // "*": Multi,
   // "/": Slash,
+  // "%": Mod,
   "=": Equal,
-  Backspace: Arrow,
+  Backspace: Backspace,
   Delete: C,
 };
 
@@ -101,13 +103,14 @@ document.addEventListener("keyup", (e) => {
 
 //*          <----------------------------------Used click Events and logics---------------------------------->
 
+
 let equalRes = false;
 
 C.addEventListener("click", () => {
   Display.value = "";
 });
 
-Arrow.addEventListener("click", () => {
+Backspace.addEventListener("click", () => {
   Display.value = Display.value.slice(0, -1);
 });
 
@@ -116,56 +119,56 @@ Point.addEventListener("click", () => {
     equalRes = false;
     return (Display.value = ".");
   } else {
-    if (
-      Display.value.charAt(Display.value.length - 1) !== "." &&
-      Display.value.charAt(Display.value.length - 1) !== "/" &&
-      Display.value.charAt(Display.value.length - 1) !== "*" &&
-      Display.value.charAt(Display.value.length - 1) !== "-" &&
-      Display.value.charAt(Display.value.length - 1) !== "+" &&
-      Display.value.charAt(Display.value.length - 1) !== "%" &&
-      Display.value.charAt(Display.value.length - 1) !== ""
-    ) {
+    if (Display.value.charAt(Display.value.length - 1) !== "." &&
+        Display.value.charAt(Display.value.length - 1) !== "/" &&
+        Display.value.charAt(Display.value.length - 1) !== "*" &&
+        Display.value.charAt(Display.value.length - 1) !== "-" &&
+        Display.value.charAt(Display.value.length - 1) !== "+" &&
+        Display.value.charAt(Display.value.length - 1) !== "%" &&
+        Display.value.charAt(Display.value.length - 1) !== "" 
+      ) 
+        {
       Display.value += ".";
-    }
   }
-});
+}});
 
 Multi.addEventListener("click", () => {
   if (Display.value.charAt(0) === "0" || equalRes) {
     equalRes = false;
     return (Display.value = "*");
   } else {
-    if (
-      Display.value.charAt(Display.value.length - 1) !== "." &&
-      Display.value.charAt(Display.value.length - 1) !== "/" &&
-      Display.value.charAt(Display.value.length - 1) !== "*" &&
-      Display.value.charAt(Display.value.length - 1) !== "-" &&
-      Display.value.charAt(Display.value.length - 1) !== "+" &&
-      Display.value.charAt(Display.value.length - 1) !== "%" &&
-      Display.value.charAt(Display.value.length - 1) !== ""
-    ) {
-      Display.value += "*";
+    if (Display.value.charAt(Display.value.length - 1) !== "." &&
+        Display.value.charAt(Display.value.length - 1) !== "/" &&
+        Display.value.charAt(Display.value.length - 1) !== "*" &&
+        Display.value.charAt(Display.value.length - 1) !== "-" &&
+        Display.value.charAt(Display.value.length - 1) !== "+" &&
+        Display.value.charAt(Display.value.length - 1) !== "%" &&
+        Display.value.charAt(Display.value.length - 1) !== "" 
+      ) 
+      {
+        Display.value += "*";
     }
-  }
-});
+  };
+  });
 
 Slash.addEventListener("click", () => {
   if (Display.value.charAt(0) === "0" || equalRes) {
     equalRes = false;
     return (Display.value = "/");
   } else {
-    if (
-      Display.value.charAt(Display.value.length - 1) !== "." &&
-      Display.value.charAt(Display.value.length - 1) !== "/" &&
-      Display.value.charAt(Display.value.length - 1) !== "*" &&
-      Display.value.charAt(Display.value.length - 1) !== "-" &&
-      Display.value.charAt(Display.value.length - 1) !== "+" &&
-      Display.value.charAt(Display.value.length - 1) !== "%" &&
-      Display.value.charAt(Display.value.length - 1) !== ""
-    ) {
+    if (Display.value.charAt(Display.value.length - 1) !== "." &&
+        Display.value.charAt(Display.value.length - 1) !== "/" &&
+        Display.value.charAt(Display.value.length - 1) !== "*" &&
+        Display.value.charAt(Display.value.length - 1) !== "-" &&
+        Display.value.charAt(Display.value.length - 1) !== "+" &&
+        Display.value.charAt(Display.value.length - 1) !== "%" &&
+        Display.value.charAt(Display.value.length - 1) !== "" 
+      ) 
+      
+      {
       Display.value += "/";
-    }
   }
+}
 });
 
 Sub.addEventListener("click", () => {
@@ -173,18 +176,18 @@ Sub.addEventListener("click", () => {
     equalRes = false;
     return (Display.value = "-");
   } else {
-    if (
-      Display.value.charAt(Display.value.length - 1) !== "." &&
-      Display.value.charAt(Display.value.length - 1) !== "/" &&
-      Display.value.charAt(Display.value.length - 1) !== "*" &&
-      Display.value.charAt(Display.value.length - 1) !== "-" &&
-      Display.value.charAt(Display.value.length - 1) !== "+" &&
-      Display.value.charAt(Display.value.length - 1) !== "%" &&
-      Display.value.charAt(Display.value.length - 1) !== ""
-    ) {
+    if (Display.value.charAt(Display.value.length - 1) !== "." &&
+        Display.value.charAt(Display.value.length - 1) !== "/" &&
+        Display.value.charAt(Display.value.length - 1) !== "*" &&
+        Display.value.charAt(Display.value.length - 1) !== "-" &&
+        Display.value.charAt(Display.value.length - 1) !== "+" &&
+        Display.value.charAt(Display.value.length - 1) !== "%" &&
+        Display.value.charAt(Display.value.length - 1) !== "" 
+      ) 
+       {
       Display.value += "-";
-    }
   }
+}
 });
 
 Add.addEventListener("click", () => {
@@ -192,46 +195,46 @@ Add.addEventListener("click", () => {
     equalRes = false;
     return (Display.value = "+");
   } else {
-    if (
-      Display.value.charAt(Display.value.length - 1) !== "." &&
-      Display.value.charAt(Display.value.length - 1) !== "/" &&
-      Display.value.charAt(Display.value.length - 1) !== "*" &&
-      Display.value.charAt(Display.value.length - 1) !== "-" &&
-      Display.value.charAt(Display.value.length - 1) !== "+" &&
-      Display.value.charAt(Display.value.length - 1) !== "%" &&
-      Display.value.charAt(Display.value.length - 1) !== ""
-    ) {
+    if (Display.value.charAt(Display.value.length - 1) !== "." &&
+        Display.value.charAt(Display.value.length - 1) !== "/" &&
+        Display.value.charAt(Display.value.length - 1) !== "*" &&
+        Display.value.charAt(Display.value.length - 1) !== "-" &&
+        Display.value.charAt(Display.value.length - 1) !== "+" &&
+        Display.value.charAt(Display.value.length - 1) !== "%" &&
+        Display.value.charAt(Display.value.length - 1) !== "" 
+      )       {
       Display.value += "+";
-    }
   }
+}
 });
 
-mod.addEventListener("click", () => {
+Mod.addEventListener("click",()=>{
   if (Display.value.charAt(0) === "0" || equalRes) {
     equalRes = false;
     return (Display.value = "%");
   } else {
-    if (
-      Display.value.charAt(Display.value.length - 1) !== "." &&
-      Display.value.charAt(Display.value.length - 1) !== "/" &&
-      Display.value.charAt(Display.value.length - 1) !== "*" &&
-      Display.value.charAt(Display.value.length - 1) !== "-" &&
-      Display.value.charAt(Display.value.length - 1) !== "+" &&
-      Display.value.charAt(Display.value.length - 1) !== "%" &&
-      Display.value.charAt(Display.value.length - 1) !== ""
-    ) {
+    if (Display.value.charAt(Display.value.length - 1) !== "." &&
+        Display.value.charAt(Display.value.length - 1) !== "/" &&
+        Display.value.charAt(Display.value.length - 1) !== "*" &&
+        Display.value.charAt(Display.value.length - 1) !== "-" &&
+        Display.value.charAt(Display.value.length - 1) !== "+" &&
+        Display.value.charAt(Display.value.length - 1) !== "%" &&
+        Display.value.charAt(Display.value.length - 1) !== ""
+      ) 
+      
+      {
       Display.value += "%";
-    }
   }
+}
 });
 
 Equal.addEventListener("click", () => {
   try {
     Display.value = eval(Display.value);
   } catch (error) {
-    Display.value = "Error";
+    Display.value = "Error"
   }
-
+ 
   equalRes = true;
 });
 
@@ -317,7 +320,7 @@ Three.addEventListener("click", () => {
 });
 
 Zero.addEventListener("click", () => {
-  if (Display.value.charAt(Display.value.length - 1) !== "") {
+  if (Display.value.charAt(Display.value.length - 1) !== "" ) {
     Display.value += "0";
   } else {
     Display.value = "";
@@ -325,7 +328,7 @@ Zero.addEventListener("click", () => {
 });
 
 DoubleZero.addEventListener("click", () => {
-  if (Display.value.charAt(Display.value.length - 1) !== "") {
+  if (Display.value.charAt(Display.value.length - 1) !== "" ) {
     Display.value += "00";
   } else {
     Display.value = "";
@@ -333,18 +336,18 @@ DoubleZero.addEventListener("click", () => {
 });
 
 TripleZero.addEventListener("click", () => {
-  if (Display.value.charAt(Display.value.length - 1) !== "") {
+  if (Display.value.charAt(Display.value.length - 1) !== "" ) {
     Display.value += "000";
   } else {
     Display.value = "";
   }
 });
 
-//! <-------------------------------------------Append section-------------------------------------------------------->
+  //! <-------------------------------------------Append section-------------------------------------------------------->
 
 NumRow.append(
   C,
-  Arrow,
+  Backspace,
   Point,
   Multi,
   Seven,
@@ -362,7 +365,7 @@ NumRow.append(
   Zero,
   DoubleZero,
   TripleZero,
-  mod,
+  Mod,
   Equal
 );
 
