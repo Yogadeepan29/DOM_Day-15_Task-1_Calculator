@@ -59,7 +59,6 @@ const Equal = element(
 
 //*          <----------------------------------Set Attributes and content---------------------------------->
 
-
 Display.type = "text";
 Display.placeholder = "0";
 Display.setAttribute("readonly", "");
@@ -67,7 +66,7 @@ Heading.innerHTML = "Calculator";
 Description.innerHTML =
   "This Calculator Task was Created with Javascript DOM Manipulation";
 
-  //! <-------------------------------------------Functions-------------------------------------------------------->
+//! <-------------------------------------------Functions-------------------------------------------------------->
 
 //*          <----------------------------------Used Keyboard Events---------------------------------->
 
@@ -103,7 +102,6 @@ document.addEventListener("keyup", (e) => {
 
 //*          <----------------------------------Used click Events and logics---------------------------------->
 
-
 let equalRes = false;
 
 C.addEventListener("click", () => {
@@ -119,56 +117,56 @@ Point.addEventListener("click", () => {
     equalRes = false;
     return (Display.value = ".");
   } else {
-    if (Display.value.charAt(Display.value.length - 1) !== "." &&
-        Display.value.charAt(Display.value.length - 1) !== "/" &&
-        Display.value.charAt(Display.value.length - 1) !== "*" &&
-        Display.value.charAt(Display.value.length - 1) !== "-" &&
-        Display.value.charAt(Display.value.length - 1) !== "+" &&
-        Display.value.charAt(Display.value.length - 1) !== "%" &&
-        Display.value.charAt(Display.value.length - 1) !== "" 
-      ) 
-        {
+    if (
+      Display.value.charAt(Display.value.length - 1) !== "." &&
+      Display.value.charAt(Display.value.length - 1) !== "/" &&
+      Display.value.charAt(Display.value.length - 1) !== "*" &&
+      Display.value.charAt(Display.value.length - 1) !== "-" &&
+      Display.value.charAt(Display.value.length - 1) !== "+" &&
+      Display.value.charAt(Display.value.length - 1) !== "%" &&
+      Display.value.charAt(Display.value.length - 1) !== ""
+    ) {
       Display.value += ".";
+    }
   }
-}});
+});
 
 Multi.addEventListener("click", () => {
   if (Display.value.charAt(0) === "0" || equalRes) {
     equalRes = false;
     return (Display.value = "*");
   } else {
-    if (Display.value.charAt(Display.value.length - 1) !== "." &&
-        Display.value.charAt(Display.value.length - 1) !== "/" &&
-        Display.value.charAt(Display.value.length - 1) !== "*" &&
-        Display.value.charAt(Display.value.length - 1) !== "-" &&
-        Display.value.charAt(Display.value.length - 1) !== "+" &&
-        Display.value.charAt(Display.value.length - 1) !== "%" &&
-        Display.value.charAt(Display.value.length - 1) !== "" 
-      ) 
-      {
-        Display.value += "*";
+    if (
+      Display.value.charAt(Display.value.length - 1) !== "." &&
+      Display.value.charAt(Display.value.length - 1) !== "/" &&
+      Display.value.charAt(Display.value.length - 1) !== "*" &&
+      Display.value.charAt(Display.value.length - 1) !== "-" &&
+      Display.value.charAt(Display.value.length - 1) !== "+" &&
+      Display.value.charAt(Display.value.length - 1) !== "%" &&
+      Display.value.charAt(Display.value.length - 1) !== ""
+    ) {
+      Display.value += "*";
     }
-  };
-  });
+  }
+});
 
 Slash.addEventListener("click", () => {
   if (Display.value.charAt(0) === "0" || equalRes) {
     equalRes = false;
     return (Display.value = "/");
   } else {
-    if (Display.value.charAt(Display.value.length - 1) !== "." &&
-        Display.value.charAt(Display.value.length - 1) !== "/" &&
-        Display.value.charAt(Display.value.length - 1) !== "*" &&
-        Display.value.charAt(Display.value.length - 1) !== "-" &&
-        Display.value.charAt(Display.value.length - 1) !== "+" &&
-        Display.value.charAt(Display.value.length - 1) !== "%" &&
-        Display.value.charAt(Display.value.length - 1) !== "" 
-      ) 
-      
-      {
+    if (
+      Display.value.charAt(Display.value.length - 1) !== "." &&
+      Display.value.charAt(Display.value.length - 1) !== "/" &&
+      Display.value.charAt(Display.value.length - 1) !== "*" &&
+      Display.value.charAt(Display.value.length - 1) !== "-" &&
+      Display.value.charAt(Display.value.length - 1) !== "+" &&
+      Display.value.charAt(Display.value.length - 1) !== "%" &&
+      Display.value.charAt(Display.value.length - 1) !== ""
+    ) {
       Display.value += "/";
+    }
   }
-}
 });
 
 Sub.addEventListener("click", () => {
@@ -176,18 +174,18 @@ Sub.addEventListener("click", () => {
     equalRes = false;
     return (Display.value = "-");
   } else {
-    if (Display.value.charAt(Display.value.length - 1) !== "." &&
-        Display.value.charAt(Display.value.length - 1) !== "/" &&
-        Display.value.charAt(Display.value.length - 1) !== "*" &&
-        Display.value.charAt(Display.value.length - 1) !== "-" &&
-        Display.value.charAt(Display.value.length - 1) !== "+" &&
-        Display.value.charAt(Display.value.length - 1) !== "%" &&
-        Display.value.charAt(Display.value.length - 1) !== "" 
-      ) 
-       {
+    if (
+      Display.value.charAt(Display.value.length - 1) !== "." &&
+      Display.value.charAt(Display.value.length - 1) !== "/" &&
+      Display.value.charAt(Display.value.length - 1) !== "*" &&
+      Display.value.charAt(Display.value.length - 1) !== "-" &&
+      Display.value.charAt(Display.value.length - 1) !== "+" &&
+      Display.value.charAt(Display.value.length - 1) !== "%" &&
+      Display.value.charAt(Display.value.length - 1) !== ""
+    ) {
       Display.value += "-";
+    }
   }
-}
 });
 
 Add.addEventListener("click", () => {
@@ -195,46 +193,46 @@ Add.addEventListener("click", () => {
     equalRes = false;
     return (Display.value = "+");
   } else {
-    if (Display.value.charAt(Display.value.length - 1) !== "." &&
-        Display.value.charAt(Display.value.length - 1) !== "/" &&
-        Display.value.charAt(Display.value.length - 1) !== "*" &&
-        Display.value.charAt(Display.value.length - 1) !== "-" &&
-        Display.value.charAt(Display.value.length - 1) !== "+" &&
-        Display.value.charAt(Display.value.length - 1) !== "%" &&
-        Display.value.charAt(Display.value.length - 1) !== "" 
-      )       {
+    if (
+      Display.value.charAt(Display.value.length - 1) !== "." &&
+      Display.value.charAt(Display.value.length - 1) !== "/" &&
+      Display.value.charAt(Display.value.length - 1) !== "*" &&
+      Display.value.charAt(Display.value.length - 1) !== "-" &&
+      Display.value.charAt(Display.value.length - 1) !== "+" &&
+      Display.value.charAt(Display.value.length - 1) !== "%" &&
+      Display.value.charAt(Display.value.length - 1) !== ""
+    ) {
       Display.value += "+";
+    }
   }
-}
 });
 
-Mod.addEventListener("click",()=>{
+Mod.addEventListener("click", () => {
   if (Display.value.charAt(0) === "0" || equalRes) {
     equalRes = false;
     return (Display.value = "%");
   } else {
-    if (Display.value.charAt(Display.value.length - 1) !== "." &&
-        Display.value.charAt(Display.value.length - 1) !== "/" &&
-        Display.value.charAt(Display.value.length - 1) !== "*" &&
-        Display.value.charAt(Display.value.length - 1) !== "-" &&
-        Display.value.charAt(Display.value.length - 1) !== "+" &&
-        Display.value.charAt(Display.value.length - 1) !== "%" &&
-        Display.value.charAt(Display.value.length - 1) !== ""
-      ) 
-      
-      {
+    if (
+      Display.value.charAt(Display.value.length - 1) !== "." &&
+      Display.value.charAt(Display.value.length - 1) !== "/" &&
+      Display.value.charAt(Display.value.length - 1) !== "*" &&
+      Display.value.charAt(Display.value.length - 1) !== "-" &&
+      Display.value.charAt(Display.value.length - 1) !== "+" &&
+      Display.value.charAt(Display.value.length - 1) !== "%" &&
+      Display.value.charAt(Display.value.length - 1) !== ""
+    ) {
       Display.value += "%";
+    }
   }
-}
 });
 
 Equal.addEventListener("click", () => {
   try {
     Display.value = eval(Display.value);
   } catch (error) {
-    Display.value = "Error"
+    Display.value = "Error";
   }
- 
+
   equalRes = true;
 });
 
@@ -320,7 +318,7 @@ Three.addEventListener("click", () => {
 });
 
 Zero.addEventListener("click", () => {
-  if (Display.value.charAt(Display.value.length - 1) !== "" ) {
+  if (Display.value.charAt(Display.value.length - 1) !== "") {
     Display.value += "0";
   } else {
     Display.value = "";
@@ -328,7 +326,7 @@ Zero.addEventListener("click", () => {
 });
 
 DoubleZero.addEventListener("click", () => {
-  if (Display.value.charAt(Display.value.length - 1) !== "" ) {
+  if (Display.value.charAt(Display.value.length - 1) !== "") {
     Display.value += "00";
   } else {
     Display.value = "";
@@ -336,14 +334,14 @@ DoubleZero.addEventListener("click", () => {
 });
 
 TripleZero.addEventListener("click", () => {
-  if (Display.value.charAt(Display.value.length - 1) !== "" ) {
+  if (Display.value.charAt(Display.value.length - 1) !== "") {
     Display.value += "000";
   } else {
     Display.value = "";
   }
 });
 
-  //! <-------------------------------------------Append section-------------------------------------------------------->
+//! <-------------------------------------------Append section-------------------------------------------------------->
 
 NumRow.append(
   C,

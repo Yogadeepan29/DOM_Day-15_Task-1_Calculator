@@ -65,7 +65,7 @@ p {
 #add,
 #subtract,
 #backspace,
-#mod{
+#mod {
   font-weight: bolder;
   font-size: large;
   color: rgb(222, 99, 116) !important;
@@ -74,16 +74,15 @@ p {
   color: white !important;
 }
 
-.btn:active{
+.btn:active {
   background-color: hsla(229, 36%, 60%, 0.534) !important;
 }
 
-#equal:active{
+#equal:active {
   background-color: hsla(229, 81%, 45%, 0.534) !important;
 }
 
-
-#equal{
+#equal {
   letter-spacing: 5px;
   border-radius: 25px;
 }
